@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".NotificationFragment">
+
+
+    <Button
+        android:id="@+id/not1"
+        android:layout_width="366dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="208dp"
+        android:backgroundTint="@color/green5"
+        android:text="Last vısıted statıon, you have specıal promotıons waıtıng for you!!!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticification_title"
+        app:strokeColor="@color/green4" />
+
+    <Button
+        android:id="@+id/not2"
+        android:layout_width="366dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/green5"
+        android:text="Would you lıke to see the new features added to the applıcatıon?"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/not1" />
+
+    <TextView
+        android:id="@+id/noticification_title"
+        android:layout_width="298dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="16dp"
+        android:text="Notifications"
+        android:textAlignment="center"
+        android:textColor="@color/green5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/noticification_txt"
+        android:layout_width="333dp"
+        android:layout_height="151dp"
+        android:layout_marginTop="92dp"
+        android:text="Stay tuned for the latest updates with our notifications page! Explore new features and receive personalized alerts to enhance your app experience."
+        android:textAlignment="center"
+        android:textColor="@color/green5"
+        android:textSize="24sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout >

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addBtn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+    tools:context=".CarFragment">
+
+
+
+    <Spinner
+        android:id="@+id/spinnerModel"
+        android:layout_width="374dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_shape"
+        android:scrollbarSize="8sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerBrand"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerBrand"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerBrand" />
+
+    <Spinner
+        android:id="@+id/spinnerBrand"
+        android:layout_width="374dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/button_shape"
+        android:scrollbarSize="8sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mercedes_logo" />
+
+    <TextView
+        android:id="@+id/txtBrand"
+        android:layout_width="44dp"
+        android:layout_height="22dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="351dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+
+    <TextView
+        android:id="@+id/txtModel"
+        android:layout_width="44dp"
+        android:layout_height="22dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="351dp"
+        tools:layout_editor_absoluteY="444dp" />
+
+    <ImageView
+        android:id="@+id/mercedes_logo"
+        android:layout_width="227dp"
+        android:layout_height="164dp"
+        android:layout_marginBottom="420dp"
+        android:src="@drawable/cardefault"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/addCarBtn"
+        android:layout_width="161dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/green5"
+        android:text="Add"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerModel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

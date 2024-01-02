@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_icon"
+        android:title="Home"
+        android:icon="@drawable/home_icon"/>
+    <item
+        android:id="@+id/map_icon"
+        android:title="Add Location"
+        android:icon="@drawable/map_icon"/>
+    <item
+        android:id="@+id/add_car_icon"
+        android:title="Add Carr"
+        android:icon="@drawable/add_car_icon"/>
+
+    <item
+        android:id="@+id/notification_icon"
+        android:title="Campaign and Sales"
+        android:icon="@drawable/notification_icon"/>
+    <item
+        android:id="@+id/profile_icon"
+        android:title="Profile"
+        android:icon="@drawable/profile_icon"/>
+
+</menu>

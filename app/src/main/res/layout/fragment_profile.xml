@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/profiletxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="greenmiles@gmail.com"
+            android:textColor="@color/green5"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/materialToolbar3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar3"
+            android:layout_width="393dp"
+            android:layout_height="552dp"
+            android:background="@drawable/button_shape"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="BARIŞ DÖNMEZ"
+            android:textColor="@color/green5"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/materialToolbar3"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toEndOf="@+id/profilePic"
+            app:layout_constraintTop_toTopOf="@+id/materialToolbar3" />
+
+        <Button
+            android:id="@+id/aboutBtn"
+            android:layout_width="372dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="48dp"
+            android:backgroundTint="@color/green2"
+            android:text="Exıt"
+            android:textColor="@color/green5"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialToolbar3"
+            app:layout_constraintEnd_toEndOf="@+id/materialToolbar3"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="@+id/materialToolbar3" />
+
+        <Button
+            android:id="@+id/helpBtn"
+            android:layout_width="372dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/green2"
+            android:text="Help"
+            android:textColor="@color/green5"
+            android:textSize="16sp"
+            app:iconTint="@color/green1"
+            app:layout_constraintBottom_toTopOf="@+id/aboutBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.435"
+            app:layout_constraintStart_toStartOf="@+id/materialToolbar3" />
+
+        <Button
+            android:id="@+id/cardBtn"
+            android:layout_width="372dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/green2"
+            android:text="Payment Information"
+            android:textColor="@color/green5"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/helpBtn"
+            app:layout_constraintEnd_toEndOf="@+id/materialToolbar3"
+            app:layout_constraintHorizontal_bias="0.439"
+            app:layout_constraintStart_toStartOf="@+id/materialToolbar3" />
+
+        <Button
+            android:id="@+id/myCarBtn"
+            android:layout_width="377dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="168dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/green2"
+            android:text="My Car"
+            android:textColor="@color/green5"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/campaignBtn"
+            app:layout_constraintEnd_toEndOf="@+id/materialToolbar3"
+            app:layout_constraintStart_toStartOf="@+id/materialToolbar3"
+            app:layout_constraintTop_toTopOf="@+id/materialToolbar3" />
+
+        <Button
+            android:id="@+id/campaignBtn"
+            android:layout_width="372dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/green2"
+            android:text="Notıfıcatıons"
+            android:textColor="@color/green5"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/cardBtn"
+            app:layout_constraintEnd_toEndOf="@+id/materialToolbar3"
+            app:layout_constraintHorizontal_bias="0.536"
+            app:layout_constraintStart_toStartOf="@+id/materialToolbar3" />
+
+
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="114dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="52dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.152"
+            app:layout_constraintStart_toStartOf="@+id/materialToolbar3"
+            app:layout_constraintTop_toBottomOf="@+id/profiletxt"
+            app:srcCompat="@drawable/profilepic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
