@@ -16,29 +16,28 @@ import androidx.fragment.app.FragmentTransaction;
 
 import tr.berke.sedef.greenmiles.com.databinding.FragmentSignupBinding;
 
-public class SignupFragment extends Fragment {
+public class VerificationCodeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_signup, container, false);
+        View view = inflater.inflate(R.layout.fragment_verification_code, container, false);
 
-
-
-        Button signUpButton = view.findViewById(R.id.buttonSignUp);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+        Button btn_verify = view.findViewById(R.id.button_verify);
+        btn_verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToLoginFragment();
+
+                navigateToResetPasswordFragment();
             }
         });
 
         return view;
     }
 
-    private void navigateToLoginFragment() {
+    private void navigateToResetPasswordFragment() {
         if (getFragmentManager() != null) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.replace(R.id.main_container, new LoginFragment());
-            transaction.addToBackStack(null); // Geri düğmesi ile geri dönüşü sağlar
+            transaction.replace(R.id.password_container, new ResetPasswordFragment());
+            transaction.addToBackStack(null);
             transaction.commit();
         }
     }

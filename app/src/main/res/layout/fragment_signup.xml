@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
 
     <Button
-        android:id="@+id/buttonSignin"
+        android:id="@+id/buttonSignUp"
         android:layout_width="179dp"
         android:layout_height="52dp"
         android:layout_marginBottom="8dp"

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerificationCodeFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/activationCodeDigit1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/edit_digit"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            app:layout_constraintEnd_toStartOf="@+id/activationCodeDigit2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <EditText
+            android:id="@+id/activationCodeDigit2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/edit_digit"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            app:layout_constraintEnd_toStartOf="@+id/activationCodeDigit3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/activationCodeDigit1"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <EditText
+            android:id="@+id/activationCodeDigit3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/edit_digit"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            app:layout_constraintEnd_toStartOf="@+id/activationCodeDigit4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/activationCodeDigit2"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <EditText
+            android:id="@+id/activationCodeDigit4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_digit"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/activationCodeDigit3"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <Button
+            android:id="@+id/button_verify"
+            android:layout_width="195dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="168dp"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/green5"
+            android:text="Verıfy"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:iconSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="349dp"
+            android:layout_height="93dp"
+            android:layout_marginTop="152dp"
+            android:text="Please write your activition code"
+            android:textAlignment="center"
+            android:textColor="@color/green5"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

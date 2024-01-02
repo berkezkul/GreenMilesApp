@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         login = (Button) findViewById(R.id.btn_login);
         signup = (Button) findViewById(R.id.btn_signup);
 
