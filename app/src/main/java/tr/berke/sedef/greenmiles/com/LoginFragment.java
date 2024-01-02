@@ -33,7 +33,7 @@ public class LoginFragment extends Fragment {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Home Activity'e geçiş
+                // Forgot Password'e geçiş
                 navigateToPasswordActivity();
             }
         });
