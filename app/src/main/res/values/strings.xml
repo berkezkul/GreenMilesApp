@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">GreenMiles</string>
+    <string name="my_map_api_key"> AIzaSyC_9WnTgf1-grRzO7Npg3e6kVzynaKK8VY</string>
+
+    <string-array name="BrandList">
+        <item>Select Brand</item>
+        <item>Tesla</item>
+        <item>TOGG</item>
+        <item>BMW</item>
+        <item>Toyota</item>
+        <item>Mercedes</item>
+        <item>Ford</item>
+    </string-array>
+
+    <string-array name="Tesla_models">
+        <item>Select Model</item>
+        <item>Tesla Model Y Long Range Dual Motor</item>
+        <item>Tesla Model 3</item>
+        <item>Tesla Model Y</item>
+        <item>Tesla Model 3 Long Range Dual Motor</item>
+        <item>Tesla Model S Plaid</item>
+        <item>Tesla Model S Dual Motor</item>
+    </string-array>
+
+    <string-array name="Mercedes_models">
+        <item>Select Model</item>
+        <item>Mercedes Cla 200</item>
+        <item>Mercedes Amg GT</item>
+        <item>Mercedes EQC 400 4MATIC</item>
+        <item>Mercedes EQE SUV 350+</item>
+        <item>Mercedes EQB 250+</item>
+        <item>Mercedes EQB 450+</item>
+    </string-array>
+
+    <string-array name="Bmw_models">
+        <item>Select Model</item>
+        <item>BMW i8</item>
+        <item>BMW 520i</item>
+        <item>BMW X6</item>
+        <item>BMW i4 eDrive40</item>
+        <item>BMW iX1 xDrive30</item>
+        <item>BMW iX3</item>
+
+    </string-array>
+    <string-array name="TOOG_models">
+        <item>Select Model</item>
+        <item>TOGG T10S C-segment Sedan</item>
+        <item>TOGG T8CX C-segment Xcoupe</item>
+        <item>TOGG T8X B-segment SUV</item>
+        <item>TOGG 10V C-segment MPV</item>
+
+
+    </string-array>
+    <string-array name="Toyota_models">
+        <item>Select Model</item>
+        <item>Toyota bZ4X FWD</item>
+        <item>Toyota bZ4X AWD</item>
+        <item>Toyota PROACE Verso M 75 kWh</item>
+        <item>Toyota PROACE Verso L 75 kWh</item>
+
+    </string-array>
+    <string-array name="Ford_models">
+        <item>Select Model</item>
+        <item>Ford Mustang Mach-E ER RWD</item>
+        <item>Ford Mustang Mach-E SR RWD</item>
+        <item>Ford Mustang Mach-E ER AWD</item>
+        <item>TFord Mustang Mach-E GT</item>
+
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

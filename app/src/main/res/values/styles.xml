@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Diğer stiller burada bulunabilir -->
+
+    <!-- Yuvarlak köşeli Toolbar için stil -->
+    <style name="RoundedCornersToolbar">
+        <item name="android:background">@drawable/rounded_toolbar</item>
+    </style>
+
+</resources>

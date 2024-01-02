@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/green2"
+    android:background="@color/green2"
+    tools:context=".LoginFragment">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
+        android:layout_width="341dp"
+        android:layout_height="355dp"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/rounded_toolbar"
+        android:backgroundTint="@color/white"
+
+        android:minHeight="?attr/actionBarSize"
+
+        android:theme="@style/RoundedCornersToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="314dp"
+        android:text="Login"
+        android:textColor="@color/green5"
+        android:textColorLink="@color/green5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+
+    <EditText
+        android:id="@+id/textUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="243dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="172dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="text"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="@color/white"
+        android:text="Forgot Password?"
+        android:textColor="@color/green5"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+
+    <Button
+        android:id="@+id/buttonSignin"
+        android:layout_width="146dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/green4"
+        android:text="SIGN IN"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
