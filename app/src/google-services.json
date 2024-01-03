@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466832013754",
+    "project_id": "green-miles-app-54238",
+    "storage_bucket": "green-miles-app-54238.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466832013754:android:70d6e631e660cc3cc2c583",
+        "android_client_info": {
+          "package_name": "tr.berke.sedef.greenmiles.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNMsBE07JEklOw8uYjXlM_C6DQ7oTncfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

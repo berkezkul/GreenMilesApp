@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import tr.berke.sedef.greenmiles.com.databinding.FragmentCarBinding;
 
 
@@ -125,6 +127,9 @@ public class CarFragment extends Fragment {
     }
 
 
+
+    FirebaseFirestore db;
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -133,6 +138,12 @@ public class CarFragment extends Fragment {
             Intent intent = new Intent(requireActivity(), HomeActivity.class);
             startActivity(intent);
         });
+
+        //firebase
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+        super.onViewCreated(view, savedInstanceState);
         init(view);
     }
 
