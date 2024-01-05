@@ -50,6 +50,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
                 android:backgroundTint="@color/green1"
                 android:paddingStart="15dp"
                 android:text="LOGIN" />
@@ -61,6 +62,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:backgroundTint="@color/green1"
+                android:background="@drawable/button_shape"
                 android:paddingStart="15dp"
                 android:text="SIGN UP" />
         </LinearLayout>

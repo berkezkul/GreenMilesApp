@@ -3,7 +3,6 @@ package tr.berke.sedef.greenmiles.com;
 
 import static android.content.ContentValues.TAG;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,7 +44,7 @@ public class SignupFragment extends Fragment {
 
         emailEditText = view.findViewById(R.id.textMail);
         passwordEditText = view.findViewById(R.id.textPassword);
-        userNameEditText = view.findViewById(R.id.textUsername);
+        userNameEditText = view.findViewById(R.id.textEmail);
 
         // Initialize Firebase Auth
         userAuth = FirebaseAuth.getInstance();
@@ -88,7 +87,7 @@ public class SignupFragment extends Fragment {
                                                     @Override
                                                     public void onSuccess(Void unused) {
                                                         Toast.makeText(getContext(),
-                                                                "Succesfully login", Toast.LENGTH_SHORT).show();
+                                                                "Succesfully sign up", Toast.LENGTH_SHORT).show();
                                                         navigateToLoginFragment();
                                                     }
                                                 }).addOnFailureListener(new OnFailureListener() {
