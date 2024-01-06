@@ -90,7 +90,7 @@ public class LoginFragment extends Fragment {
     }
 
 
-    
+
     private Executor executor = Executors.newSingleThreadExecutor();
 
     private void signIn(){
