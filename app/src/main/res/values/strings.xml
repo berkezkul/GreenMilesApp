@@ -2,6 +2,12 @@
     <string name="app_name">GreenMiles</string>
     <string name="my_map_api_key"> AIzaSyC_9WnTgf1-grRzO7Npg3e6kVzynaKK8VY</string>
 
+    <!--Registered since-->
+    <string name="user_since">You are a registered user since:\n %1$s</string>
+
+    <!--welcome + name-->
+    <string name="welcome_user">Welcome! %1$s</string>
+
     <string-array name="BrandList">
         <item>Select Brand</item>
         <item>Tesla</item>

@@ -79,7 +79,7 @@
                     android:id="@+id/textView_show_email"/>
             </RelativeLayout>
             <Button
-                android:id="@+id/buttonSignUp"
+                android:id="@+id/buttonSignOut"
                 android:layout_width="179dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="40dp"
@@ -91,10 +91,19 @@
                 android:layout_below="@id/RL_email"
                 android:layout_centerHorizontal="true"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonSignOut"
+                android:layout_marginTop="50dp"
+                android:hint="Loading..."
+                android:textAlignment="center"
+                android:id="@+id/textView_show_register_date"/>
+
+
+
 
         </RelativeLayout>
     </LinearLayout>
-    
-    
-    
+
 </ScrollView>

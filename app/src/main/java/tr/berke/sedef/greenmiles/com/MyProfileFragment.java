@@ -1,64 +1,106 @@
 package tr.berke.sedef.greenmiles.com;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseUserMetadata;
+import com.google.firebase.auth.internal.zzaa;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
+
 public class MyProfileFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private TextView textViewWelcome, textViewName, textViewEmail, textViewRegisterDate;
+    private FirebaseAuth auth;
     public MyProfileFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MyProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MyProfileFragment newInstance(String param1, String param2) {
-        MyProfileFragment fragment = new MyProfileFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
+        auth = FirebaseAuth.getInstance();
+
+        //show profile details
+        FirebaseUser firebaseUser = auth.getCurrentUser();
+        if(firebaseUser != null){
+            showUserProfile(firebaseUser);
+        }else{
+            Toast.makeText(getContext(),"Something went wrong!!!", Toast.LENGTH_SHORT).show();
         }
+
     }
 
+    private void showUserProfile(FirebaseUser firebaseUser) {
+        FirebaseUserMetadata metadata = firebaseUser.getMetadata();
+        long registerTimeStamp = metadata.getCreationTimestamp();
+        String datePattern = "E, dd MMMM yyyy hh:mm a z";
+        SimpleDateFormat sdf = new SimpleDateFormat(datePattern);
+        sdf.setTimeZone(TimeZone.getDefault());
+        String register = sdf.format(new Date(registerTimeStamp));
+
+        String registerDate = getResources().getString(R.string.user_since, register);
+        textViewRegisterDate.setText(registerDate);
+
+        String name = firebaseUser.getDisplayName();
+        String email = firebaseUser.getEmail();
+        textViewName.setText(name);
+        textViewEmail.setText(email);
+
+        String welcome = getResources().getString(R.string.welcome_user, name);
+        textViewWelcome.setText(welcome);
+    }
+
+    private void signOut(View v) {
+        Button signOutButton = v.findViewById(R.id.buttonSignOut);
+        signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                auth.signOut();
+                Toast.makeText(getContext(), "Signed Out", Toast.LENGTH_SHORT).show();
+                if (getFragmentManager() != null) {
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.main_container, new LoginFragment());
+                    transaction.addToBackStack(null); // Geri düğmesi ile geri dönüşü sağlar
+                    transaction.commit();
+                }
+            }
+        });
+    }
+
+    private void findViews(View v) {
+        textViewWelcome = v.findViewById(R.id.textView_show_welcome);
+        textViewName = v.findViewById(R.id.textView_show_name);
+        textViewEmail = v.findViewById(R.id.textView_show_email);
+        textViewRegisterDate = v.findViewById(R.id.textView_show_register_date);
+
+    }
+
+
+    View v;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_profile, container, false);
+        v = inflater.inflate(R.layout.fragment_my_profile, container, false);
+        findViews(v);
+        signOut(v);
+        return v;
     }
 }
