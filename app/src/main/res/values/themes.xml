@@ -2,7 +2,11 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.GreenMilesApp" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/green5</item>
+        <item
+            name="colorPrimary">#30C667
+        </item>
+
+
     </style>
 
     <style name="Theme.GreenMilesApp" parent="Base.Theme.GreenMilesApp" />
