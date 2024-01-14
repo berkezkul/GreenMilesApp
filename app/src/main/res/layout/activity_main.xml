@@ -4,21 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green2"
-    android:backgroundTint="@color/green2"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="239dp"
-        android:layout_height="158dp"
+        android:layout_width="246dp"
+        android:layout_height="165dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/green_miles_logo" />
+        app:srcCompat="@drawable/gm_logo" />
 
     <FrameLayout
         android:id="@+id/main_container"
@@ -51,7 +50,9 @@
                 android:layout_marginBottom="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
-                android:backgroundTint="@color/green1"
+                android:backgroundTint="@color/green6"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:paddingStart="15dp"
                 android:text="LOGIN" />
 
@@ -61,7 +62,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:backgroundTint="@color/green1"
+                android:backgroundTint="@color/green6"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:background="@drawable/button_shape"
                 android:paddingStart="15dp"
                 android:text="SIGN UP" />
