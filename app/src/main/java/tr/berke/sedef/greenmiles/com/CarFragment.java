@@ -29,14 +29,12 @@ public class CarFragment extends Fragment {
     private Spinner spinnerBrand, spinnerModel;
     private TextView txtBrand, txtModel;
     ArrayAdapter<CharSequence> adapterBrand;
-
     String selectedBrand;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentCarBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -130,8 +128,6 @@ public class CarFragment extends Fragment {
 
 
 
-    FirebaseFirestore db;
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -150,26 +146,4 @@ public class CarFragment extends Fragment {
     }
 
 
-
-
-
-
-
-    /*
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
-    }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        return inflater.inflate(R.layout.fragment_car, container, false);
-    }
-
-     */
 }

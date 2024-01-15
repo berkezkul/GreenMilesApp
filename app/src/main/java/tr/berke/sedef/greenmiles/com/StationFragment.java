@@ -119,8 +119,7 @@ public class StationFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         myMap = googleMap;
-
-        // İlk oluşturulduğunda haritayı güncelleyin
+        // İlk oluşturulduğunda haritayı güncelleme
         updateMap();
     }
 

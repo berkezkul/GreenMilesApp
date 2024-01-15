@@ -38,7 +38,7 @@ public class ResetPasswordFragment extends Fragment {
         if (getFragmentManager() != null) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.replace(R.id.password_container, new LoginFragment());
-            transaction.addToBackStack(null); // Geri düğmesi ile geri dönüşü sağlar
+            transaction.addToBackStack(null);
             transaction.commit();
         }
     }

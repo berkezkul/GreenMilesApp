@@ -9,16 +9,12 @@ import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-
-
-  /*  public void onActionBarTitleChange(String newTitle) {
-        getSupportActionBar().setTitle(newTitle);
-    }*/
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +24,28 @@ public class HomeActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        ImageView societyImageView = findViewById(R.id.societyIcon);
+
+        societyImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Diğer aktiviteye geçmek için Intent kullan
+                Intent intent = new Intent(HomeActivity.this, SocietyPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView weatherImageView = findViewById(R.id.weatherIcon);
+
+        weatherImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Diğer aktiviteye geçmek için Intent kullan
+                Intent intent = new Intent(HomeActivity.this, WeatherPageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -60,4 +78,5 @@ public class HomeActivity extends AppCompatActivity {
 
                 };
             };
+
 }

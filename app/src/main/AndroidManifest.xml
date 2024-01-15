@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenMilesApp"
         tools:targetApi="31">
+        <activity
+            android:name=".SocietyPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherPageActivity"
+            android:exported="false" />
         <activity
             android:name=".UploadProfilePicActivity"
             android:exported="false" />

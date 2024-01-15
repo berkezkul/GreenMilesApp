@@ -44,13 +44,11 @@ public class LoginFragment extends Fragment {
         //hide password using eye icon
         showHidePassword(view);
 
-        // Initialize Firebase Auth
         userAuth = FirebaseAuth.getInstance();
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Home Activity'e geçiş
                 signIn();
             }
         });
@@ -139,10 +137,6 @@ public class LoginFragment extends Fragment {
 
         }
     }
-
-
-
-
 
 
 

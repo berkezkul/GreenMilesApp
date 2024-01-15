@@ -147,7 +147,6 @@ public class ProfileFragment extends Fragment {
 
                     }
                 } else {
-                    // Hata durumunda
                     Log.e("ProfileFragment", "Error getting user document", task.getException());
                 }
             });

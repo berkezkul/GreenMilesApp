@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         signup.setOnClickListener(new View.OnClickListener() {
 
             FragmentManager fragmentManager = getSupportFragmentManager();

@@ -50,7 +50,6 @@ public class SignupFragment extends Fragment {
         //phoneEditText = view.findViewById(R.id.textPhone);
 
 
-        // Initialize Firebase Auth
         userAuth = FirebaseAuth.getInstance();
 
         Button signUpButton = view.findViewById(R.id.buttonSignUp);
@@ -60,7 +59,6 @@ public class SignupFragment extends Fragment {
                 signUp();
             }
         });
-
         return view;
     }
 
@@ -99,7 +97,6 @@ public class SignupFragment extends Fragment {
                                                 }).addOnFailureListener(new OnFailureListener() {
                                                     @Override
                                                     public void onFailure(@NonNull Exception e) {
-                                                        // Firestore'a veri ekleme başarısız
                                                         Toast.makeText(getContext(), "Failed to add user to Firestore.", Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
@@ -117,32 +114,18 @@ public class SignupFragment extends Fragment {
                                 }
                             }
                             private void updateUI(FirebaseUser user) {
-                                // Kullanıcı arayüzünü güncelleme işlemleri (isteğe bağlı)
+
                             }
 
                         });
     }
 
 
-    /*
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-
-        FirebaseUser currentUser = userAuth.getCurrentUser();
-        if(currentUser != null){
-            currentUser.reload();
-        }
-    }
-    */
-
-
     private void navigateToLoginFragment() {
         if (getFragmentManager() != null) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.replace(R.id.main_container, new LoginFragment());
-            transaction.addToBackStack(null); // Geri düğmesi ile geri dönüşü sağlar
+            transaction.addToBackStack(null);
             transaction.commit();
         }
     }
