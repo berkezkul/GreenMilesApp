@@ -38,13 +38,17 @@ public class SignupFragment extends Fragment {
     private EditText emailEditText;
     private EditText passwordEditText;
     private EditText userNameEditText;
+
+    //private EditText phoneEditText;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
 
         emailEditText = view.findViewById(R.id.textMail);
         passwordEditText = view.findViewById(R.id.textPassword);
-        userNameEditText = view.findViewById(R.id.textEmail);
+        userNameEditText = view.findViewById(R.id.textUsername);
+        //phoneEditText = view.findViewById(R.id.textPhone);
+
 
         // Initialize Firebase Auth
         userAuth = FirebaseAuth.getInstance();
@@ -66,6 +70,7 @@ public class SignupFragment extends Fragment {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
         String username = userNameEditText.getText().toString();
+        //String phoneNumber = phoneEditText.getText().toString();
 
 
         userAuth.createUserWithEmailAndPassword(email, password)
@@ -81,6 +86,7 @@ public class SignupFragment extends Fragment {
                                         user.put("Email", email);
                                         user.put("Password", password);
                                         user.put("Username", username);
+                                        //user.put("Phone", phoneNumber);
 
                                         db.collection("Users").document(current.getUid()).
                                                 set(user).addOnSuccessListener(new OnSuccessListener<Void>() {

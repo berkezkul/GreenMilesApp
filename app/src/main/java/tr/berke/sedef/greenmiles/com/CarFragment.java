@@ -32,6 +32,7 @@ public class CarFragment extends Fragment {
 
     String selectedBrand;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -69,6 +70,7 @@ public class CarFragment extends Fragment {
             public void onNothingSelected(AdapterView<?> parent) {
                 txtBrand.setText(parent.getItemAtPosition(0).toString());
             }
+
         });
 
         // spinnerModel için listener

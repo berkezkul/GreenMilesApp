@@ -1,5 +1,6 @@
 package tr.berke.sedef.greenmiles.com;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -15,7 +16,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -30,12 +33,14 @@ public class UploadProfilePicActivity extends AppCompatActivity {
     private StorageReference storageReference;
     private FirebaseUser firebaseUser;
     private Uri uriImage;
+    private ProgressBar progressBar;
     private static final int PICK_IMAGE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_profile_pic);
+        progressBar = findViewById(R.id.progressBar);
 
         Button buttonUploadPicChoose = findViewById(R.id.upload_pic_choose_button);
         Button buttonUploadPic =  findViewById(R.id.upload_pic_button);
@@ -96,19 +101,37 @@ public class UploadProfilePicActivity extends AppCompatActivity {
                             //display user image after upload
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                     .setPhotoUri(downloadUri).build();
-                            firebaseUser.updateProfile(profileUpdates);
+                            firebaseUser.updateProfile(profileUpdates).
+                                    addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        loadProfileFragment();
+                                    } else {
+                                        Toast.makeText(UploadProfilePicActivity.this,
+                                                "Failed to update profile picture", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                             // got download url with use file reference and set profile picture
+                            //imageViewUploadPic.setImageURI(downloadUri);
+
                         }
                     });
                     Toast.makeText(UploadProfilePicActivity.this, "Upload Successfull",Toast.LENGTH_SHORT).show();
-
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    ProfileFragment profileFragment = new ProfileFragment();
-                    transaction.addToBackStack(null);
-                    transaction.replace(R.id.home_container, profileFragment);
-                    transaction.commit();
+                    progressBar.setVisibility(View.GONE); // Yükleme başarılı olduktan sonra progressBar'ı gizle
                 }
             });
+        }
+    }
+
+    private void loadProfileFragment() {
+        if (getFragmentManager() != null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            ProfileFragment profileFragment = new ProfileFragment();
+            transaction.replace(R.id.home_container, new ProfileFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
         }
     }
 

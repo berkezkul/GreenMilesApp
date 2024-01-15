@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -36,19 +38,18 @@ import java.util.TimeZone;
 
 public class ProfileFragment extends Fragment {
 
-    private TextView textViewWelcome, textViewName, textViewEmail, textViewRegisterDate;
+    private TextView textViewWelcome, textViewName, textViewEmail, textViewRegisterDate;  //textViewPhone
     private ImageView imageView;
     private FirebaseAuth authProfile;
     private FirebaseFirestore db;
     private View v;
+    private ProgressBar progressBar;
     public ProfileFragment() {
         // Required empty public constructor
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        // Fragment'ın layout'unu inflate et
         v = inflater.inflate(R.layout.fragment_profile, container, false);
         return v;
     }
@@ -71,6 +72,8 @@ public class ProfileFragment extends Fragment {
             Toast.makeText(getContext(), "Something went wrong!", Toast.LENGTH_LONG).show();
         }
 
+        progressBar = v.findViewById(R.id.progressBar_profile);
+
         //imageView
         imageView =  v.findViewById(R.id.imageView_profile_pic);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +90,7 @@ public class ProfileFragment extends Fragment {
         textViewWelcome = v.findViewById(R.id.textView_show_welcome);
         textViewName = v.findViewById(R.id.textView_show_name);
         textViewEmail = v.findViewById(R.id.textView_show_email);
+        //textViewPhone = v.findViewById(R.id.textView_show_phone);
         textViewRegisterDate = v.findViewById(R.id.textView_show_register_date);
         //imageView =  v.findViewById(R.id.imageView_profile_pic);
     }
@@ -116,16 +120,31 @@ public class ProfileFragment extends Fragment {
                         // Firestore'daki verilerle TextView'leri güncelleme
                         String userName = (String) userData.get("Username");
                         String email = (String) userData.get("Email");
-
+                        //int phoneNo = (int) userData.get("Phone");
 
                         textViewName.setText(userName);
                         textViewEmail.setText(email);
+                        //textViewPhone.setText(phoneNo);
 
                         String welcome = getResources().getString(R.string.welcome_user, userName);
                         textViewWelcome.setText(welcome);
 
-                        Uri uri = firebaseUser.getPhotoUrl();
-                        Picasso.with(getContext()).load(uri).into(imageView);
+                        // Picasso kütüphanesi ile Firebase Storage'dan resmi yükleme
+                        if (firebaseUser.getPhotoUrl() != null) {
+                            Picasso.with(getContext()).load(firebaseUser.getPhotoUrl()).into(imageView, new Callback() {
+                                @Override
+                                public void onSuccess() {
+                                    progressBar.setVisibility(View.GONE); // Resim yüklendikten sonra progressBar'ı gizle
+                                }
+
+                                @Override
+                                public void onError() {
+                                    progressBar.setVisibility(View.GONE); // Resim yüklenemediğinde progressBar'ı gizle
+                                    Toast.makeText(getContext(), "Error loading profile picture", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+
                     }
                 } else {
                     // Hata durumunda
@@ -135,6 +154,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+
     private void signOut() {
         Button signOutButton = v.findViewById(R.id.buttonSignOut);
         signOutButton.setOnClickListener(v -> {
@@ -142,12 +162,13 @@ public class ProfileFragment extends Fragment {
             Toast.makeText(getContext(), "Signed Out", Toast.LENGTH_SHORT).show();
             if (getFragmentManager() != null) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.home_container, new LoginFragment());
+                transaction.replace(R.id.main_container, new LoginFragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
     }
+
 
     private void navigateToUploadProfilePicActivity(){
         Intent intent = new Intent(getActivity(), UploadProfilePicActivity.class);

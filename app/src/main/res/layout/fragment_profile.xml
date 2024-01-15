@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,19 +15,20 @@
 
         <ImageView
             android:id="@+id/imageView_profile_pic"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="155dp"
+            android:layout_height="154dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:background="@drawable/profile_image" />
+            android:background="@drawable/no_profile_pic" />
 
         <TextView
             android:id="@+id/textView_show_welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:hint="Loading..."
+            android:textStyle="bold"
             android:textAlignment="center"
             android:textSize="20dp"
             android:textColor="@color/green4" />
@@ -36,7 +38,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:padding="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp">
 
@@ -56,6 +58,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Loading..."
+                    android:textSize="16dp"
+                    android:textStyle="bold"
                     android:layout_marginStart="50dp"
                     android:layout_alignStart="@id/user"
                     android:id="@+id/textView_show_name"/>
@@ -81,13 +85,16 @@
                     android:layout_height="25dp"
                     android:background="@drawable/email"
                     android:id="@+id/email"/>
+
                 <TextView
+                    android:id="@+id/textView_show_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Loading..."
-                    android:layout_marginStart="50dp"
                     android:layout_alignStart="@id/email"
-                    android:id="@+id/textView_show_email"/>
+                    android:layout_marginStart="51dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:hint="Loading..." />
             </RelativeLayout>
 
             <!--
@@ -141,13 +148,17 @@
                     android:layout_height="30dp"
                     android:background="@drawable/phone"
                     android:id="@+id/phone"/>
+
                 <TextView
+                    android:id="@+id/textView_show_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Loading..."
-                    android:layout_marginStart="50dp"
                     android:layout_alignStart="@id/phone"
-                    android:id="@+id/textView_show_phone"/>
+                    android:layout_marginStart="49dp"
+                    android:text="+90 555 987 65 43"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:hint="Loading..." />
             </RelativeLayout>
 
 
@@ -178,6 +189,17 @@
             android:hint="Loading..."
             android:textAlignment="center"
             android:id="@+id/textView_show_register_date"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar_profile"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:elevation="10dp"
+            android:visibility="gone" />
+
     </LinearLayout>
 
 </ScrollView>

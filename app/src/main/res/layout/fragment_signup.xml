@@ -4,31 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/green2"
-    android:background="@color/green2"
+    android:background="@color/white"
     tools:context=".LoginFragment">
 
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar2"
-        android:layout_width="341dp"
-        android:layout_height="355dp"
-        android:layout_marginBottom="148dp"
-        android:background="@drawable/rounded_toolbar"
-        android:backgroundTint="@color/white"
-
+        android:layout_width="330dp"
+        android:layout_height="382dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/button_shape"
         android:minHeight="?attr/actionBarSize"
-
         android:theme="@style/RoundedCornersToolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <TextView
         android:id="@+id/textLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="314dp"
+        android:layout_marginBottom="340dp"
         android:text="Sign Up"
         android:textColor="@color/green5"
         android:textColorLink="@color/green5"
@@ -36,49 +33,71 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
 
+
     <EditText
-        android:id="@+id/textEmail"
+        android:id="@+id/textUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="text"
+        android:textColorHint="@color/green5"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/textPassword"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2"
+        app:layout_constraintTop_toBottomOf="@+id/textLogin" />
 
+    <!--<EditText
+        android:id="@+id/textPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="text"
+        android:textColorHint="@color/green5"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2"
+        app:layout_constraintTop_toBottomOf="@+id/textPassword" />-->
 
     <EditText
         android:id="@+id/textMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_marginTop="95dp"
         android:ems="10"
         android:hint="Email Address"
         android:inputType="text"
+        android:textColorHint="@color/green5"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2"
+        app:layout_constraintTop_toBottomOf="@+id/textUsername" />
 
     <EditText
         android:id="@+id/textPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="72dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="text"
+        android:textColorHint="@color/green5"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/textMail"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar2"
+        app:layout_constraintTop_toBottomOf="@+id/textUsername"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonSignUp"
@@ -86,13 +105,11 @@
         android:layout_height="52dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_shape"
-        android:backgroundTint="@color/green4"
         android:text="SIGN UP"
-        android:textColor="@color/white"
+        android:textColor="@color/green5"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
 
 

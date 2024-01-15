@@ -1,69 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".NotificationFragment">
 
 
-    <Button
-        android:id="@+id/not1"
-        android:layout_width="366dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="208dp"
-        android:backgroundTint="@color/green5"
-        android:text="Last vısıted statıon, you have specıal promotıons waıtıng for you!!!"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noticification_title"
-        app:strokeColor="@color/green4" />
 
-    <Button
-        android:id="@+id/not2"
-        android:layout_width="366dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="@color/green5"
-        android:text="Would you lıke to see the new features added to the applıcatıon?"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/not1" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="16dp">
 
-    <TextView
-        android:id="@+id/noticification_title"
-        android:layout_width="298dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="16dp"
-        android:text="Notifications"
-        android:textAlignment="center"
-        android:textColor="@color/green5"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/noticification_txt"
-        android:layout_width="333dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="92dp"
-        android:text="Stay tuned for the latest updates with our notifications page! Explore new features and receive personalized alerts to enhance your app experience."
-        android:textAlignment="center"
-        android:textColor="@color/green5"
-        android:textSize="24sp"
+            <TextView
+                android:id="@+id/noticification_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_gravity="center"
+                android:text="Notifications"
+                android:textAlignment="center"
+                android:textColor="@color/green5"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/noticification_txt"
+                android:layout_width="333dp"
+                android:layout_height="151dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Stay tuned for the latest updates with our notifications page! Explore new features and receive personalized alerts to enhance your app experience."
+                android:textAlignment="center"
+                android:textColor="@color/green5"
+                android:textSize="24sp"
 
-</androidx.constraintlayout.widget.ConstraintLayout >
+                />
+
+            <Button
+                android:id="@+id/not1"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_shape_rectangle"
+                android:text="Last vısıted statıon, you have specıal promotıons waıtıng for you!!!"
+                android:textColor="@color/green5"
+                android:textSize="16sp"
+                />
+            <Button
+                android:id="@+id/not2"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_shape_rectangle"
+                android:text="Would you lıke to see the new features added to the applıcatıon?"
+                android:textColor="@color/green5"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/not3"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_shape_rectangle"
+                android:text="You are approaching a nearby charging station! Check our app to view available charging points."
+                android:textColor="@color/green5"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/not4"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_shape_rectangle"
+                android:text="The selected charging station is currently available! Plan your route and charge your vehicle now."
+                android:textColor="@color/green5"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/not5"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_shape_rectangle"
+                android:text="Your vehicle has been successfully charged! You are ready to hit the road."
+                android:textColor="@color/green5"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/not6"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_shape_rectangle"
+                android:text="Your vehicle's battery level is low! You are being directed to a nearby charging station."
+                android:textColor="@color/green5"
+                android:textSize="16sp" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

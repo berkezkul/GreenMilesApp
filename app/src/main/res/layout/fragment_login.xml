@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/green2"
-    android:background="@color/green2"
+    android:background="@color/white"
     tools:context=".LoginFragment">
 
 
@@ -13,16 +12,15 @@
         android:id="@+id/materialToolbar2"
         android:layout_width="341dp"
         android:layout_height="355dp"
-        android:layout_marginBottom="140dp"
-        android:background="@drawable/rounded_toolbar"
-        android:backgroundTint="@color/white"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/button_shape"
+
 
         android:minHeight="?attr/actionBarSize"
 
         android:theme="@style/RoundedCornersToolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -40,13 +38,14 @@
         app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
 
     <EditText
-        android:id="@+id/textEmail"
+        android:id="@+id/textUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="243dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="text"
+        android:textColorHint="@color/green5"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
@@ -59,6 +58,7 @@
         android:layout_marginBottom="172dp"
         android:ems="10"
         android:hint="Password"
+        android:textColorHint="@color/green5"
         android:inputType="text"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
@@ -70,27 +70,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="124dp"
         android:backgroundTint="@color/white"
         android:text="Forgot Password?"
         android:textColor="@color/green5"
+        android:textStyle="bold"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
 
     <Button
         android:id="@+id/buttonSignin"
-        android:layout_width="146dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="172dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/button_shape"
-        android:backgroundTint="@color/green4"
         android:text="SIGN IN"
+        android:textColor="@color/green5"
         android:textSize="20sp"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/materialToolbar2"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar2"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar2" />
 
     <ImageView
