@@ -25,6 +25,7 @@ Notifications page:
 
 Car adding page:
 
+![git4](https://github.com/berkezkul/GreenMilesApp/assets/72610534/1f6ae96b-6377-4388-85d4-e6a929b1a9c0)
 
 
 
