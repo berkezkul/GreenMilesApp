@@ -17,6 +17,8 @@ User's profile page:
 
 Profile picture edit:
 
+![git3](https://github.com/berkezkul/GreenMilesApp/assets/72610534/a9b94514-8f85-4e90-896d-2dd8bbd75b1a)
+
 
 
 
