@@ -23,6 +23,10 @@ Notifications page:
 
 ![notigm](https://github.com/berkezkul/GreenMilesApp/assets/72610534/10947714-fe3e-4092-82e0-87efcbd29c3e)
 
+Car adding page:
+
+
+
 
 
 
